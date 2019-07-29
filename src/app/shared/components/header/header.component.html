@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleSidenav()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+      <span>OMS</span>
+    </button>
+    <div fxShow="true" fxHide.lt-md>
+      <a href="#" mat-button>Orders</a>
+      <a href="#" mat-button>Contact us</a>
+      <a href="#" mat-button>About us</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
