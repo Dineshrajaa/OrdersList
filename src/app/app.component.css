@@ -1,7 +1,6 @@
 mat-sidenav-container,
 mat-sidenav-content,
-mat-sidenav,
-oms-side-bar-list {
+mat-sidenav {
   height: 100%;
 }
 

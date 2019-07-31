@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersListComponent implements OnInit {
 
+  ordersListHeaderLabels: string[] = ['Order#', 'Origin',
+    'Destination', 'Reference#',
+    'Pickup date', 'Delivery date',
+    'Business unit', 'Status'];
   constructor() { }
 
   ngOnInit() {

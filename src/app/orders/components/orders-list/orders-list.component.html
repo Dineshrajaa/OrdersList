@@ -1,1 +1,12 @@
-<p>orders-list works!</p>
+<section>
+    <header>
+        <mat-grid-list [cols]="ordersListHeaderLabels.length" [rowHeight]="'50px'">
+            <mat-grid-tile *ngFor="let olHeaderLabel of ordersListHeaderLabels" class="ol-title">
+                <mat-grid-tile-header>{{olHeaderLabel}}</mat-grid-tile-header>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </header>
+    <main>
+        <oms-orders-list-item *ngFor="let _ of [1,2,3,4,5]"></oms-orders-list-item>
+    </main>
+</section>

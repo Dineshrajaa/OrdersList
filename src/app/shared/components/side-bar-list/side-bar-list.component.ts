@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'oms-side-bar-list',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarListComponent implements OnInit {
 
+  @Output()
+  public sidenavClose = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSidenavClose() {
+    this.sidenavClose.emit();
   }
 
 }
