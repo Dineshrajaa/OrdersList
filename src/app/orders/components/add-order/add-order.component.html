@@ -4,7 +4,7 @@
 <mat-dialog-content>
     <form [formGroup]="placeOrderForm" novalidate>
         <div fxLayout="row">
-            <div fxFlex="1 0 auto">
+            <div>
                 <mat-form-field class="form-element">
                     <input matInput placeholder="Origin" formControlName="origin" required>
                     <mat-error *ngIf="!poForm.origin.valid && poForm.origin.touched">
@@ -12,7 +12,7 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div fxFlex="1 0 auto">
+            <div>
                 <mat-form-field class="form-element">
                     <input matInput placeholder="Destination" formControlName="destination" required>
                     <mat-error *ngIf="!poForm.destination.valid && poForm.destination.touched">
@@ -22,22 +22,45 @@
             </div>
         </div>
         <div fxLayout="row">
-            <div fxFlex="1 0 auto">
+            <div>
                 <mat-form-field class="form-element">
-                    <input matInput placeholder="Reference number" formControlName="origin" required>
-                    <mat-error *ngIf="!poForm.referenceNumber.valid && poForm.referenceNumber.touched">
-                        {{errorMessages.origin_required}}
+                    <input matInput placeholder="Business unit" formControlName="businessUnit" required>
+                    <mat-error *ngIf="!poForm.businessUnit.valid && poForm.businessUnit.touched">
+                        {{errorMessages.businessUnit_required}}
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div fxFlex="1 0 auto">
+            <div>
                 <mat-form-field class="form-element">
-                    <input matInput placeholder="Destination" formControlName="destination" required>
-                    <mat-error *ngIf="!poForm.destination.valid && poForm.destination.touched">
-                        {{errorMessages.destination_required}}
+                    <input matInput placeholder="Reference number" formControlName="referenceNumber">
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div>
+                <mat-form-field class="form-element">
+                    <input matInput [matDatepicker]="pickupDatepicker" placeholder="Pickup date" formControlName="pickupDate" required>
+                    <mat-datepicker-toggle matSuffix [for]="pickupDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #pickupDatepicker></mat-datepicker>
+                    <mat-error *ngIf="!poForm.pickupDate.valid && poForm.pickupDate.touched">
+                        {{errorMessages.pickupDate_required}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="form-element">
+                    <input matInput [matDatepicker]="dropDatePicker" placeholder="Delivery date" formControlName="deliveryDate" required>
+                    <mat-datepicker-toggle matSuffix [for]="dropDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dropDatePicker></mat-datepicker>
+                    <mat-error *ngIf="!poForm.deliveryDate.valid && poForm.deliveryDate.touched">
+                        {{errorMessages.deliveryDate_required}}
                     </mat-error>
                 </mat-form-field>
             </div>
         </div>
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" [disabled]="placeOrderForm.invalid">Place order</button>
+        </mat-dialog-actions>
     </form>
 </mat-dialog-content>
