@@ -3,13 +3,41 @@
 </h3>
 <mat-dialog-content>
     <form [formGroup]="placeOrderForm" novalidate>
-        <div fxLayout="row wrap">
-            <mat-form-field class="form-element">
-                <input matInput placeholder="Origin" formControlName="origin" required>
-                <mat-error *ngIf="!origin.valid && origin.touched">
-                    Field required
-                </mat-error>
-            </mat-form-field>
+        <div fxLayout="row">
+            <div fxFlex="1 0 auto">
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="Origin" formControlName="origin" required>
+                    <mat-error *ngIf="!poForm.origin.valid && poForm.origin.touched">
+                        {{errorMessages.origin_required}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="1 0 auto">
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="Destination" formControlName="destination" required>
+                    <mat-error *ngIf="!poForm.destination.valid && poForm.destination.touched">
+                        {{errorMessages.destination_required}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
         </div>
-    </form>>
+        <div fxLayout="row">
+            <div fxFlex="1 0 auto">
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="Reference number" formControlName="origin" required>
+                    <mat-error *ngIf="!poForm.referenceNumber.valid && poForm.referenceNumber.touched">
+                        {{errorMessages.origin_required}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="1 0 auto">
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="Destination" formControlName="destination" required>
+                    <mat-error *ngIf="!poForm.destination.valid && poForm.destination.touched">
+                        {{errorMessages.destination_required}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
 </mat-dialog-content>

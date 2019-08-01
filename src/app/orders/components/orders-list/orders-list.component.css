@@ -1,4 +1,23 @@
+.ol{
+    margin: 20px;
+    border: 0.5px solid #888888;
+    border-bottom: none;    
+}
+
+.ol-header{
+    background: #8889;
+}
+
+#ol-container{
+    height: 400px;
+}
+
 .ol-title{
     font-weight: bold;
     color: black;
+}
+
+.order-add-btn{
+    right:0;
+    float:right;
 }

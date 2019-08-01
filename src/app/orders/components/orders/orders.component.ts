@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AddOrderComponent } from '../add-order/add-order.component';
 import { DialogService } from '../../../shared/services/dialog.service';
+import { MatDialogConfig } from '@angular/material';
 
 @Component({
   selector: 'oms-orders',
@@ -15,8 +16,12 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
   }
 
-  openAddOrderPopup(){
-    this.dialogService.openDialog(AddOrderComponent);
+  openAddOrderPopup() {
+    const addOrderDialogConfig: MatDialogConfig = {
+      'width': '600px',
+      'height': '600px'
+    };
+    this.dialogService.openDialog(AddOrderComponent, addOrderDialogConfig);
   }
 
 }

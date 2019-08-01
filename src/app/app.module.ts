@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { MatSidenavModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { AddOrderComponent } from './orders/components/add-order/add-order.compo
     MatModule,
     MatSidenavModule,
     ReactiveFormsModule,
+    MalihuScrollbarModule.forRoot(),
     SharedModule,
     AppRoutingModule
   ],
