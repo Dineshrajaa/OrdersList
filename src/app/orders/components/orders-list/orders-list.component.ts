@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { MalihuScrollbarService } from 'ngx-malihu-scrollbar';
+import { OrderModel } from '../../models/order-model';
 
 @Component({
   selector: 'oms-orders-list',
@@ -10,19 +11,29 @@ import { MalihuScrollbarService } from 'ngx-malihu-scrollbar';
 export class OrdersListComponent implements OnDestroy, OnInit {
 
   ordersListHeaderLabels: any[] = [
-    { 'label': 'Order#', 'colSpan': 1 }, { 'label': 'Origin', 'colSpan': 1 },
-    { 'label': 'Destination', 'colSpan': 1 }, { 'label': 'Reference#', 'colSpan': 1 },
-    { 'label': 'Pickup date', 'colSpan': 1 }, { 'label': 'Delivery date', 'colSpan': 1 },
-    { 'label': 'Business unit', 'colSpan': 1 }, { 'label': 'Status', 'colSpan': 1 }];
+    { label: 'Order#' }, { label: 'Origin' },
+    { label: 'Destination' }, { label: 'Reference#' },
+    { label: 'Pickup date' }, { label: 'Delivery date' },
+    { label: 'Business unit' }, { label: 'Status' }];
+
+  orders: OrderModel[] = [];
+
   constructor(private mScrollbarService: MalihuScrollbarService) { }
 
   ngOnInit() {
-    this.mScrollbarService.initScrollbar('#ol-container',
-      { axis: 'y', theme: 'dark-thick', scrollButtons: { enable: true } });
+    this.initializeScroll();
   }
 
   ngOnDestroy() {
     this.mScrollbarService.destroy('#ol-container');
+  }
+
+  initializeScroll() {
+    this.mScrollbarService.initScrollbar('#ol-container',
+      { axis: 'y', theme: 'dark-thick', scrollButtons: { enable: true } });
+
+    this.mScrollbarService.initScrollbar('#order-list',
+      { axis: 'x', theme: 'dark-thick', scrollButtons: { enable: true } });
   }
 
 }

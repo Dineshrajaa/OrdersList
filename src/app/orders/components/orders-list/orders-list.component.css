@@ -3,13 +3,20 @@
     border: thin solid #888889;
 }
 
-.ol-holder{
-    overflow-x: auto;
-    width: 800px;
+.ol-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    background: #8889;
 }
 
-.ol-header{
-    background: #8889;
+#order-list{
+    overflow-x: auto;
+}
+.ol-header-item{
+    flex: 1 0 80px;
+    background: grey;
 }
 
 #ol-container{

@@ -1,3 +1,15 @@
 .ol-item{
     border-bottom: 0.5px solid #888888;
 }
+
+.ol-details-holder{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ol-details{
+    flex: 1 0 80px;
+    border-bottom: 1px solid;
+    text-align: center;
+}
