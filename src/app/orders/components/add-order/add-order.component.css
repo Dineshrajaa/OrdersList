@@ -1,0 +1,16 @@
+.form-row{
+    display: flex;
+}
+
+.form-column{
+    flex:1 1 48%;
+}
+
+.po-form-holder{
+    height: 100%;
+}
+
+.add-btn{
+    background: #53d356;
+    color:white;   
+}

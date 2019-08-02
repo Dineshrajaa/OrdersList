@@ -18,8 +18,8 @@ export class OrdersComponent implements OnInit {
 
   openAddOrderPopup() {
     const addOrderDialogConfig: MatDialogConfig = {
-      'width': '600px',
-      'height': '600px'
+      width: '600px',
+      height: '600px'
     };
     this.dialogService.openDialog(AddOrderComponent, addOrderDialogConfig);
   }

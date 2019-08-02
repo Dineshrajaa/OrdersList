@@ -1,6 +1,11 @@
 .ol{
     margin: 20px;
-    border: 0.5px solid #888888;
+    border: thin solid #888889;
+}
+
+.ol-holder{
+    overflow-x: auto;
+    width: 800px;
 }
 
 .ol-header{

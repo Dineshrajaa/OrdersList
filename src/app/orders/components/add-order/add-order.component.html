@@ -1,10 +1,10 @@
 <h3 mat-dialog-title>
     Place order
 </h3>
-<mat-dialog-content>
+<mat-dialog-content class="po-form-holder">
     <form [formGroup]="placeOrderForm" novalidate>
-        <div fxLayout="row">
-            <div>
+        <div class="form-row">
+            <div class="form-column">
                 <mat-form-field class="form-element">
                     <input matInput placeholder="Origin" formControlName="origin" required>
                     <mat-error *ngIf="!poForm.origin.valid && poForm.origin.touched">
@@ -12,7 +12,7 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div>
+            <div class="form-column">
                 <mat-form-field class="form-element">
                     <input matInput placeholder="Destination" formControlName="destination" required>
                     <mat-error *ngIf="!poForm.destination.valid && poForm.destination.touched">
@@ -21,8 +21,8 @@
                 </mat-form-field>
             </div>
         </div>
-        <div fxLayout="row">
-            <div>
+        <div class="form-row">
+            <div class="form-column">
                 <mat-form-field class="form-element">
                     <input matInput placeholder="Business unit" formControlName="businessUnit" required>
                     <mat-error *ngIf="!poForm.businessUnit.valid && poForm.businessUnit.touched">
@@ -30,37 +30,45 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div>
+            <div class="form-column">
                 <mat-form-field class="form-element">
                     <input matInput placeholder="Reference number" formControlName="referenceNumber">
                 </mat-form-field>
             </div>
         </div>
-        <div fxLayout="row">
-            <div>
+        <div class="form-row">
+            <div class="form-column">
                 <mat-form-field class="form-element">
-                    <input matInput [matDatepicker]="pickupDatepicker" placeholder="Pickup date" formControlName="pickupDate" required>
+                    <input matInput [min]="minPickUpDate" [matDatepicker]="pickupDatepicker" placeholder="Pickup date" formControlName="pickupDate"
+                        required>
                     <mat-datepicker-toggle matSuffix [for]="pickupDatepicker"></mat-datepicker-toggle>
-                    <mat-datepicker #pickupDatepicker></mat-datepicker>
-                    <mat-error *ngIf="!poForm.pickupDate.valid && poForm.pickupDate.touched">
+                    <mat-datepicker #pickupDatepicker disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="!poForm.pickupDate.valid && poForm.pickupDate.hasError('required')">
                         {{errorMessages.pickupDate_required}}
+                    </mat-error>
+                    <mat-error *ngIf="!poForm.pickupDate.valid && !poForm.pickupDate.hasError('required') && poForm.pickupDate.hasError('invalidDate')">
+                        {{errorMessages.pickupDate_invalid}}
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div>
+            <div class="form-column">
                 <mat-form-field class="form-element">
-                    <input matInput [matDatepicker]="dropDatePicker" placeholder="Delivery date" formControlName="deliveryDate" required>
+                    <input matInput [min]="minDeliveryDate" [matDatepicker]="dropDatePicker" placeholder="Delivery date" formControlName="deliveryDate"
+                        required>
                     <mat-datepicker-toggle matSuffix [for]="dropDatePicker"></mat-datepicker-toggle>
-                    <mat-datepicker #dropDatePicker></mat-datepicker>
-                    <mat-error *ngIf="!poForm.deliveryDate.valid && poForm.deliveryDate.touched">
+                    <mat-datepicker #dropDatePicker disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="!poForm.deliveryDate.valid && poForm.deliveryDate.hasError('required')">
                         {{errorMessages.deliveryDate_required}}
+                    </mat-error>
+                    <mat-error *ngIf="!poForm.deliveryDate.valid && !poForm.deliveryDate.hasError('required') && poForm.deliveryDate.hasError('invalidDate')">
+                        {{errorMessages.deliveryDate_invalid}}
                     </mat-error>
                 </mat-form-field>
             </div>
         </div>
-        <mat-dialog-actions>
-            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
-            <button mat-raised-button color="primary" [disabled]="placeOrderForm.invalid">Place order</button>
+        <mat-dialog-actions class="form-row">
+            <button class="form-column" mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button (click)="placeOrder()" class="form-column add-btn" mat-raised-button [disabled]="placeOrderForm.invalid">Place order</button>
         </mat-dialog-actions>
     </form>
 </mat-dialog-content>
