@@ -1,12 +1,12 @@
 <div class="ol-item">
-    <div class="ol-details-holder">
-        <div class="ol-details">1</div>
-        <div class="ol-details">Trivandrum</div>
-        <div class="ol-details">Kollam</div>
-        <div class="ol-details">123</div>
-        <div class="ol-details">31-Jul-2019</div>
-        <div class="ol-details">31-Jul-2019</div>
-        <div class="ol-details">LM</div>
-        <div class="ol-details">Intransist</div>
-    </div>
+  <div class="ol-details-holder">
+    <div class="ol-details">1</div>
+    <div class="ol-details">{{order.origin}}</div>
+    <div class="ol-details">{{order.destination}}</div>
+    <div class="ol-details">{{order.referenceNumber}}</div>
+    <div class="ol-details">{{order.pickupDate | date: 'dd-MMM-yyyy'}}</div>
+    <div class="ol-details">{{order.deliveryDate | date: 'dd-MMM-yyyy'}}</div>
+    <div class="ol-details">{{order.businessUnit}}</div>
+    <div class="ol-details">{{order.status}}</div>
+  </div>
 </div>

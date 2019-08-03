@@ -33,7 +33,9 @@ export class AddOrderComponent implements OnInit {
       referenceNumber: [''],
       pickupDate: ['', [Validators.required, ValidateDate]],
       deliveryDate: ['', [Validators.required, ValidateDate]],
-      businessUnit: ['', Validators.required]
+      businessUnit: ['', Validators.required],
+      commodity: ['', Validators.required],
+      quantity: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     });
   }
 

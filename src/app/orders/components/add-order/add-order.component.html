@@ -39,6 +39,27 @@
         <div class="form-row">
             <div class="form-column">
                 <mat-form-field class="form-element">
+                    <input matInput placeholder="Items shipped" formControlName="commodity" required>
+                    <mat-error *ngIf="!poForm.commodity.valid && poForm.commodity.touched">
+                        {{errorMessages.commodity_required}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-column">
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="Quantity" formControlName="quantity" required>
+                    <mat-error *ngIf="poForm.quantity.hasError('required') && poForm.quantity.touched">
+                        {{errorMessages.quantity_required}}
+                    </mat-error>
+                    <mat-error *ngIf="poForm.quantity.hasError('pattern') && poForm.quantity.touched">
+                        {{errorMessages.quantity_invalid}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <mat-form-field class="form-element">
                     <input matInput [min]="minPickUpDate" [matDatepicker]="pickupDatepicker" placeholder="Pickup date" formControlName="pickupDate"
                         required>
                     <mat-datepicker-toggle matSuffix [for]="pickupDatepicker"></mat-datepicker-toggle>

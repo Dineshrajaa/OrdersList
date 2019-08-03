@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input } from '@angular/core';
 
 import { MalihuScrollbarService } from 'ngx-malihu-scrollbar';
 import { OrderModel } from '../../models/order-model';
@@ -10,13 +10,14 @@ import { OrderModel } from '../../models/order-model';
 })
 export class OrdersListComponent implements OnDestroy, OnInit {
 
-  ordersListHeaderLabels: any[] = [
+  @Input()
+  orders: OrderModel[];
+
+  ordersListHeaderLabels = [
     { label: 'Order#' }, { label: 'Origin' },
     { label: 'Destination' }, { label: 'Reference#' },
     { label: 'Pickup date' }, { label: 'Delivery date' },
     { label: 'Business unit' }, { label: 'Status' }];
-
-  orders: OrderModel[] = [];
 
   constructor(private mScrollbarService: MalihuScrollbarService) { }
 
