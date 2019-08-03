@@ -27,6 +27,7 @@ export class OrdersListComponent implements OnDestroy, OnInit {
 
   ngOnDestroy() {
     this.mScrollbarService.destroy('#ol-container');
+    this.mScrollbarService.destroy('#order-list');
   }
 
   initializeScroll() {
