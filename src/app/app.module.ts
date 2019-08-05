@@ -13,13 +13,15 @@ import { MatModule } from './mat/mat.module';
 import { SharedModule } from './shared/shared.module';
 import { AddOrderComponent } from './orders/components/add-order/add-order.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     AddOrderComponent,
-    ContactusComponent
+    ContactusComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
