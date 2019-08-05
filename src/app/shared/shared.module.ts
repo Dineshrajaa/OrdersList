@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { MatModule } from '../mat/mat.module';
 import { SideBarListComponent } from './components/side-bar-list/side-bar-list.component';
+import { RouterModule } from '../../../node_modules/@angular/router';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SideBarListComponent } from './components/side-bar-list/side-bar-list.c
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MatModule
+    MatModule,
+    RouterModule
   ], exports: [
     HeaderComponent,
     MatModule,

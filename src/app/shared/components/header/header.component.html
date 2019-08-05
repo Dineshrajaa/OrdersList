@@ -6,9 +6,9 @@
     <span>OMS</span>
     <span class="menu-spacer"></span>
     <div fxShow="true" fxHide.lt-md>
-      <a routerLink="'/orders'" mat-button>Orders</a>
-      <a routerLink="'/aboutus'" mat-button>Contact us</a>
-      <a routerLink="'/contactus'" mat-button>About us</a>
+      <a [routerLink]="['/orders']" mat-button>Orders</a>
+      <a [routerLink]="['/contactus']" mat-button>Contact us</a>
+      <a [routerLink]="['/aboutus']" mat-button>About us</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

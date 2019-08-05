@@ -12,12 +12,14 @@ import { ContainerComponent } from './container/container.component';
 import { MatModule } from './mat/mat.module';
 import { SharedModule } from './shared/shared.module';
 import { AddOrderComponent } from './orders/components/add-order/add-order.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    AddOrderComponent
+    AddOrderComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
