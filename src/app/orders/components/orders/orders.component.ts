@@ -23,19 +23,7 @@ export class OrdersComponent implements OnDestroy, OnInit {
 
   ngOnInit() {
     this.listenForNewOrder();
-    const orderItem = new OrderModel({
-      businessUnit: 'Delivery',
-      commodity: 'hi',
-      deliveryDate: new Date(),
-      destination: 'Test',
-      orderId: 144,
-      origin: 'Test',
-      pickupDate: new Date(),
-      quantity: 1000,
-      referenceNumber: '12345',
-      status: 'Placed'
-    });
-    this.orders = [orderItem, orderItem, orderItem];
+    this.getAllOrders();
   }
 
   openAddOrderPopup() {
@@ -49,8 +37,11 @@ export class OrdersComponent implements OnDestroy, OnInit {
   listenForNewOrder() {
     this.ordersSubscription = this.ordersService.refreshOrders.subscribe((orders) => {
       this.orders = orders;
-      console.warn(orders);
     });
+  }
+
+  getAllOrders() {
+    this.orders = this.ordersService.getOrders();
   }
 
   unSubscribeListeners() {

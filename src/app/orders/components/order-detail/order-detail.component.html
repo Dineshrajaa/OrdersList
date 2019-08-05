@@ -1,1 +1,44 @@
-<p>order-detail works!</p>
+<section>
+    <header>
+        <h5>Order details</h5>
+    </header>
+    <main *ngIf="fetchedOrderDetails">
+        <div>
+            <span>From: </span>
+            <span>{{fetchedOrderDetails.origin}}</span>
+        </div>
+        <div>
+            <span>To: </span>
+            <span>{{fetchedOrderDetails.destination}}</span>
+        </div>
+        <div>
+            <span>Pickup date: </span>
+            <span>{{fetchedOrderDetails.pickupDate| date: 'dd-MMM-yyyy'}}</span>
+        </div>
+        <div>
+            <span>Delivery date: </span>
+            <span>{{fetchedOrderDetails.deliveryDate| date: 'dd-MMM-yyyy'}}</span>
+        </div>
+
+        <div>
+            <span>Reference number: </span>
+            <span>{{fetchedOrderDetails.referenceNumber}}</span>
+        </div>
+        <div>
+            <span>Commodity: </span>
+            <span>{{fetchedOrderDetails.commodity}}</span>
+        </div>
+        <div>
+            <span>Quantity: </span>
+            <span>{{fetchedOrderDetails.quantity}}</span>
+        </div>
+        <div>
+            <span>Business unit: </span>
+            <span>{{fetchedOrderDetails.businessUnit}}</span>
+        </div>
+        <div>
+            <span>status: </span>
+            <span>{{fetchedOrderDetails.status}}</span>
+        </div>
+    </main>
+</section>

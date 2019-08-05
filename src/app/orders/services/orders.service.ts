@@ -15,7 +15,7 @@ export class OrdersService {
 
   constructor(private dialogService: DialogService) { }
 
-  getOrders() {
+  getOrders(): OrderModel[] {
     return this.ordersList;
   }
 
@@ -23,5 +23,9 @@ export class OrdersService {
     this.ordersList.push(newOrder);
     this.dialogService.closeDialog();
     this.refreshOrders.next(this.ordersList); // just to notify the orders list to refresh
+  }
+
+  getOrderDetails(orderId): OrderModel {
+    return this.ordersList.find((order) => order.orderId === orderId);
   }
 }

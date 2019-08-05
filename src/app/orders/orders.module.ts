@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '../../../node_modules/@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
@@ -15,6 +16,7 @@ import { OrderDetailComponent } from './components/order-detail/order-detail.com
     CommonModule,
     FormsModule,
     SharedModule,
+    RouterModule,
     OrdersRoutingModule
   ]
 })
