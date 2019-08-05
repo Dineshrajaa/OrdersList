@@ -13,7 +13,8 @@ export class OrdersService {
   public ordersList: OrderModel[] = [];
   public refreshOrders = new Subject<OrderModel[]>();
 
-  constructor(private dialogService: DialogService) { }
+  constructor(private dialogService: DialogService) {
+  }
 
   getOrders(): OrderModel[] {
     return this.ordersList;

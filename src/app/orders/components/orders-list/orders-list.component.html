@@ -5,7 +5,7 @@
         </div>
     </header>
     <main id="ol-container">
-        <oms-orders-list-item [order]="order" *ngFor="let order of orders"></oms-orders-list-item>
+        <oms-orders-list-item [order]="order" *ngFor="let order of orders | filter:searchText"></oms-orders-list-item>
         <div class="ol-zero-state" *ngIf="orders?.length === 0">No orders available!</div>
     </main>
 </section>

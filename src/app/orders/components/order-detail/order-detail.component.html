@@ -1,44 +1,44 @@
 <section>
-    <header>
-        <h5>Order details</h5>
+    <header class="od-header">
+        <h2>Order details</h2>
     </header>
     <main *ngIf="fetchedOrderDetails">
-        <div>
-            <span>From: </span>
-            <span>{{fetchedOrderDetails.origin}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">From: </div>
+            <div class="od-details">{{fetchedOrderDetails.origin}}</div>
         </div>
-        <div>
-            <span>To: </span>
-            <span>{{fetchedOrderDetails.destination}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">To: </div>
+            <div class="od-details">{{fetchedOrderDetails.destination}}</div>
         </div>
-        <div>
-            <span>Pickup date: </span>
-            <span>{{fetchedOrderDetails.pickupDate| date: 'dd-MMM-yyyy'}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">Pickup date: </div>
+            <div class="od-details">{{fetchedOrderDetails.pickupDate| date: 'dd-MMM-yyyy'}}</div>
         </div>
-        <div>
-            <span>Delivery date: </span>
-            <span>{{fetchedOrderDetails.deliveryDate| date: 'dd-MMM-yyyy'}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">Delivery date: </div>
+            <div class="od-details">{{fetchedOrderDetails.deliveryDate| date: 'dd-MMM-yyyy'}}</div>
         </div>
 
-        <div>
-            <span>Reference number: </span>
-            <span>{{fetchedOrderDetails.referenceNumber}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">Reference number: </div>
+            <div class="od-details">{{fetchedOrderDetails.referenceNumber}}</div>
         </div>
-        <div>
-            <span>Commodity: </span>
-            <span>{{fetchedOrderDetails.commodity}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">Commodity: </div>
+            <div class="od-details">{{fetchedOrderDetails.commodity}}</div>
         </div>
-        <div>
-            <span>Quantity: </span>
-            <span>{{fetchedOrderDetails.quantity}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">Quantity: </div>
+            <div class="od-details">{{fetchedOrderDetails.quantity}}</div>
         </div>
-        <div>
-            <span>Business unit: </span>
-            <span>{{fetchedOrderDetails.businessUnit}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details">Business unit: </div>
+            <div class="od-details">{{fetchedOrderDetails.businessUnit}}</div>
         </div>
-        <div>
-            <span>status: </span>
-            <span>{{fetchedOrderDetails.status}}</span>
+        <div class="od-detail-holder">
+            <div class="od-details od-details-last">status: </div>
+            <div class="od-details od-details-last">{{fetchedOrderDetails.status}}</div>
         </div>
     </main>
 </section>

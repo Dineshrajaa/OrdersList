@@ -1,0 +1,21 @@
+.od-header{
+    text-align: center;
+}
+
+.od-detail-holder{
+    display: flex;
+    justify-content: center;
+}
+
+.od-details{
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+    font-size: 18px;
+    border: thin solid #888889;
+    border-bottom: none;
+}
+
+.od-details-last{
+    border-bottom: thin solid #888889;
+}

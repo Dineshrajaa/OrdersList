@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
 import { OrdersListItemComponent } from './components/orders-list-item/orders-list-item.component';
@@ -15,6 +17,7 @@ import { OrderDetailComponent } from './components/order-detail/order-detail.com
   imports: [
     CommonModule,
     FormsModule,
+    Ng2SearchPipeModule,
     SharedModule,
     RouterModule,
     OrdersRoutingModule

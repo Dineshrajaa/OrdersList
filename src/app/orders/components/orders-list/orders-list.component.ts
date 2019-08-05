@@ -13,6 +13,9 @@ export class OrdersListComponent implements OnDestroy, OnInit {
   @Input()
   orders: OrderModel[];
 
+  @Input()
+  searchText: string;
+
   ordersListHeaderLabels = [
     { label: 'Order#' }, { label: 'Origin' },
     { label: 'Destination' }, { label: 'Reference#' },
