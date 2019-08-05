@@ -1,3 +1,7 @@
+<div class="search-box-holder">
+    <span>Search: </span>
+    <input type="text" class="search-box" [(ngModel)]="searchText">
+</div>
 <oms-orders-list [orders]="orders"></oms-orders-list>
 <button mat-fab color="primary" class="order-add-btn" matTooltip="Place order" (click)="openAddOrderPopup()">
     <i class="material-icons">add</i>

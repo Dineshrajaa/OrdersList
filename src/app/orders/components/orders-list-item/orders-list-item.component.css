@@ -6,10 +6,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    background: #fbe5d5;
 }
 
 .ol-details{
     flex: 1 0 80px;
     border-bottom: 1px solid;
     text-align: center;
+    padding: 5px;
 }

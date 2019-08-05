@@ -17,4 +17,8 @@ export class OrdersListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  viewOrderDetails(orderId: number) {
+    console.warn('Will show you the order details of orderId: ', orderId);
+  }
+
 }
